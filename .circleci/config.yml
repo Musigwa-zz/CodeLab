@@ -1,8 +1,6 @@
 version: 2
 jobs:
   build:
-    environment:
-      CC_TEST_REPORTER_ID: 8d1d9eee48f0e2a1f4b0b5ac675a206379740684617e20959ebf5118979e7941
     docker:
       - image: circleci/node:10.0-browsers
     steps:
@@ -24,7 +22,7 @@ jobs:
           command: |
             ./cc-test-reporter before-build
             npm run test
-            ./cc-test-reporter after-build --exit-code $?
+            ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
       - run:
           name: "Submit the coverage report to coveralls"
           command: npm run coveralls
