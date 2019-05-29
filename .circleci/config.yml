@@ -22,7 +22,7 @@ jobs:
           command: |
             ./cc-test-reporter before-build
             npm run test
-            ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+            ./cc-test-reporter after-build --exit-code $?
       - run:
           name: "Submit the coverage report to coveralls"
           command: npm run coveralls
