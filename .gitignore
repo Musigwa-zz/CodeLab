@@ -10,3 +10,9 @@ npm-debug.*
 
 # npm files
 package-*
+
+# test folders/files
+coverage
+
+# All snapshots
+**/__snapshots__

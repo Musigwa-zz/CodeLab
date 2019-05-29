@@ -6,7 +6,6 @@ import {
   View,
   FlatList,
   Image,
-  ActivityIndicator,
   SafeAreaView
 } from "react-native";
 import { colors, metrics } from "../helpers/constants";
