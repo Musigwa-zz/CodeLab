@@ -1,4 +1,5 @@
 [![CircleCI](https://circleci.com/gh/Musigwa/RNLevelUp/tree/ch-setup-test-environment-166257426.svg?style=svg)](https://circleci.com/gh/Musigwa/RNLevelUp/tree/ch-setup-test-environment-166257426)
+[![Coverage Status](https://coveralls.io/repos/github/Musigwa/RNLevelUp/badge.svg)](https://coveralls.io/github/Musigwa/RNLevelUp)
 [![Maintainability](https://api.codeclimate.com/v1/badges/9ab1aecdc9de22ecc4e7/maintainability)](https://codeclimate.com/github/Musigwa/RNLevelUp/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/9ab1aecdc9de22ecc4e7/test_coverage)](https://codeclimate.com/github/Musigwa/RNLevelUp/test_coverage)
 
