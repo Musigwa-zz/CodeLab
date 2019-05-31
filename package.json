@@ -5,21 +5,27 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "eject": "expo eject",
-    "test": "jest --coverage -u",
+    "test": "jest --coverage -u --detectOpenHandles",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
   "dependencies": {
     "expo": "^32.0.0",
+    "prop-types": "^15.7.2",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
-    "react-navigation": "^3.11.0"
+    "react-navigation": "^3.11.0",
+    "react-redux": "^6.0.1",
+    "redux": "^4.0.1",
+    "redux-persist": "^5.10.0",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "babel-preset-expo": "^5.0.0",
     "coveralls": "^3.0.3",
     "jest": "^24.8.0",
     "jest-expo": "^32.0.1",
-    "react-test-renderer": "^16.8.6"
+    "react-test-renderer": "^16.8.6",
+    "redux-devtools": "^3.5.0"
   },
   "private": true
 }
