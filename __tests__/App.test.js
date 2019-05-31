@@ -8,4 +8,9 @@ describe("<App />", () => {
     const tree = renderer.create(<App />).toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it("renderItem should render correctly", () => {
+    const tree = renderer.create(<App />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

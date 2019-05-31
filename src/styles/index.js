@@ -5,10 +5,7 @@ const { width } = Dimensions.get("window");
 
 export default StyleSheet.create({
   container: { flex: 1 },
-  listContainer: {
-    flex: 1,
-    marginTop: 20
-  },
+  listContainer: { flex: 1 },
   text: {
     textAlign: "left",
     paddingVertical: 2

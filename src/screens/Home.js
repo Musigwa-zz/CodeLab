@@ -1,12 +1,19 @@
 import React, { Component } from "react";
-import { Text, View, FlatList, Image, SafeAreaView } from "react-native";
+import {
+  Text,
+  View,
+  FlatList,
+  Image,
+  StatusBar,
+  SafeAreaView
+} from "react-native";
 import styles from "../styles";
 import dummyData from "../helpers/dummyData";
 
 const { developers } = dummyData;
 
 class Home extends Component {
-  static navigationOptions = { header: null };
+  // static navigationOptions = { header: null };
 
   state = { loading: false };
 
@@ -20,7 +27,6 @@ class Home extends Component {
           style={styles.avatar}
         />
       </View>
-
       <View style={styles.content}>
         <Text style={[styles.title, styles.text]}>{item.username}</Text>
         <Text style={[styles.subTitle, styles.text]}>{item.email}</Text>
@@ -32,6 +38,7 @@ class Home extends Component {
   render() {
     return (
       <SafeAreaView style={styles.container}>
+        <StatusBar barStyle="light-content" />
         <FlatList
           style={styles.listContainer}
           data={developers}
