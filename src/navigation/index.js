@@ -24,9 +24,7 @@ const AppNavigator = createStackNavigator(
               alignItems: "center",
               padding: 10
             }}
-            onPress={() => {
-              console.log("Clicked the search button");
-            }}
+            onPress={() => {}}
             activeOpacity={0.5}
           >
             {Helpers.renderIcon({

@@ -14,9 +14,7 @@ export const fetchAll = () => async dispatch => {
       const { items: developers } = data;
       dispatch(success({ developers, developersCount: developers.length }));
     } else dispatch(failed({ errorMessage: "something went wrong" }));
-  } catch (error) {
-    console.log("error:", error);
-  }
+  } catch (error) {}
 };
 
 export const fetchOne = username => async dispatch => {
@@ -25,7 +23,5 @@ export const fetchOne = username => async dispatch => {
     const { data: currentDev, status } = await Axios.get(`/users/${username}`);
     if (status === 200) dispatch(success({ currentDev }));
     else dispatch(failed({ errorMessage: "something went wrong" }));
-  } catch (error) {
-    console.log("error:", error);
-  }
+  } catch (error) {}
 };

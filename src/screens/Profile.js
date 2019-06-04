@@ -1,10 +1,16 @@
 import React, { Component } from "react";
 import { Text, SafeAreaView } from "react-native";
-import styles from "../styles";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import styles from "../styles";
 import { fetchOne } from "../redux/actions/developers";
 
 class Profile extends Component {
+  static propTypes = {
+    fetchInfo: PropTypes.func.isRequired,
+    navigation: PropTypes.objectOf(PropTypes.any).isRequired,
+    currentDev: PropTypes.objectOf(PropTypes.any).isRequired
+  };
   componentWillMount() {
     const { fetchInfo, navigation: { state } = {} } = this.props;
     const { username } = state.params;
@@ -12,7 +18,6 @@ class Profile extends Component {
   }
 
   render() {
-    const { currentDev } = this.props;
     return (
       <SafeAreaView
         style={[

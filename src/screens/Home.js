@@ -14,7 +14,11 @@ import Helpers from "../helpers";
 import { fetchAll } from "../redux/actions/developers";
 
 export class Home extends Component {
-  static propTypes = {};
+  static propTypes = {
+    fetchDevelopers: PropTypes.func.isRequired,
+    navigation: PropTypes.objectOf(PropTypes.any).isRequired,
+    devReducer: PropTypes.objectOf(PropTypes.any).isRequired
+  };
 
   componentWillMount() {
     const { fetchDevelopers } = this.props;

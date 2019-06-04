@@ -2,6 +2,7 @@ import React from "react";
 import { Platform } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { colors } from "./constants";
+import PropTypes from "prop-types";
 
 export default class Helpers {
   /**
@@ -27,3 +28,9 @@ export default class Helpers {
     );
   };
 }
+
+Helpers.renderIcon.propTypes = {
+  name: PropTypes.string,
+  size: PropTypes.number,
+  color: PropTypes.string
+};
