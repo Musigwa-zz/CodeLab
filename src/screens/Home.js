@@ -4,7 +4,6 @@ import {
   View,
   FlatList,
   Image,
-  StatusBar,
   TouchableOpacity,
   SafeAreaView
 } from "react-native";
@@ -12,17 +11,21 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import styles from "../styles";
 import Helpers from "../helpers";
+import { fetchAll } from "../redux/actions/developers";
 
 export class Home extends Component {
-  static propTypes = {
-    prop: PropTypes.string
-  };
+  static propTypes = {};
+
+  componentWillMount() {
+    const { fetchDevelopers } = this.props;
+    fetchDevelopers();
+  }
 
   renderItem = ({ item }) => {
     const { navigation } = this.props;
     return (
       <TouchableOpacity
-        onPress={() => navigation.navigate("Profile")}
+        onPress={() => navigation.navigate("Profile", { username: item.login })}
         activeOpacity={0.7}
         style={styles.listItem}
       >
@@ -30,15 +33,17 @@ export class Home extends Component {
           <Image
             height={styles.avatar.height}
             width={styles.avatar.width}
-            source={{ uri: item.avatar }}
+            source={{ uri: item.avatar_url }}
             style={styles.avatar}
           />
         </View>
         <View style={styles.content}>
-          <Text style={[styles.title, styles.text]}>{item.username}</Text>
-          <Text style={[styles.subTitle, styles.text]}>{item.email}</Text>
+          <Text style={[styles.title, styles.text]}>{item.login}</Text>
+          <Text style={[styles.subTitle, styles.text]}>
+            {`${item.url.substring(0, 30)}...`}
+          </Text>
         </View>
-        <View style={styles.arrow}>
+        <View style={[styles.arrow]}>
           {Helpers.renderIcon({ name: "arrow-forward" })}
         </View>
       </TouchableOpacity>
@@ -46,12 +51,9 @@ export class Home extends Component {
   };
 
   render() {
-    const {
-      devReducer: { developers }
-    } = this.props;
+    const { devReducer: { developers } = {} } = this.props;
     return (
       <SafeAreaView style={styles.container}>
-        <StatusBar barStyle="light-content" />
         <FlatList
           showsHorizontalScrollIndicator={false}
           showsVerticalScrollIndicator={false}
@@ -65,10 +67,8 @@ export class Home extends Component {
   }
 }
 
-const mapStateToProps = ({ devReducer }) => ({
-  devReducer
-});
-const mapDispatchToProps = {};
+const mapStateToProps = ({ devReducer }) => ({ devReducer });
+const mapDispatchToProps = { fetchDevelopers: fetchAll };
 
 export default connect(
   mapStateToProps,

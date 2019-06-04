@@ -9,6 +9,8 @@ export const colors = ({ opacity = 1 }) => ({
   secondaryText: `rgba(46, 78, 109, ${opacity})`
 });
 
+export const baseURL = "https://api.github.com";
+
 export const metrics = ({ color = "secondaryDark", opacity = 1 }) => ({
   border: {
     borderWith: 0.5,

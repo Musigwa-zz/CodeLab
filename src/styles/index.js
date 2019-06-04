@@ -34,4 +34,5 @@ export default StyleSheet.create({
     height: 1,
     backgroundColor: colors({ opacity: 0.5 }).secondaryText
   }
+  // arrow: { position: "absolute", right: 10 }
 });
