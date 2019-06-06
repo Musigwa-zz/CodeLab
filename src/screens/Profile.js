@@ -5,12 +5,12 @@ import PropTypes from "prop-types";
 import styles from "../styles";
 import { fetchOne } from "../redux/actions/developers";
 
-class Profile extends Component {
+export class Profile extends Component {
   static propTypes = {
     fetchInfo: PropTypes.func.isRequired,
-    navigation: PropTypes.objectOf(PropTypes.any).isRequired,
-    currentDev: PropTypes.objectOf(PropTypes.any).isRequired
+    navigation: PropTypes.objectOf(PropTypes.any).isRequired
   };
+
   componentWillMount() {
     const { fetchInfo, navigation: { state } = {} } = this.props;
     const { username } = state.params;

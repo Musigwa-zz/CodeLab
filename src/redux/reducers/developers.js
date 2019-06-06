@@ -4,7 +4,7 @@ import {
   FETCHING_FAILED
 } from "../actions/types";
 
-const initialState = {
+export const initialState = {
   developers: [],
   currentDev: {},
   errorMessage: null,

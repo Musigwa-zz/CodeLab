@@ -8,14 +8,79 @@
   },
   "parser": "babel-eslint",
   "extends": ["airbnb", "plugin:prettier/recommended", "prettier/react"],
+  "globals": {
+    "fetch": false,
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
   "plugins": ["react", "prettier"],
   "rules": {
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "quotes": [
-      "error",
-      "double",
+    "no-use-before-define": "off",
+    "react/prop-types": 2,
+    "react/forbid-prop-types": [
+      2,
       {
-        "allowTemplateLiterals": true
+        "forbid": ["object", "array"],
+        "checkContextTypes": false,
+        "checkChildContextTypes": false
+      }
+    ],
+    "no-unused-vars": [
+      "error",
+      {
+        "varsIgnorePattern": "^_",
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "quotes": "error",
+    "eol-last": ["error", "always"],
+    "import/prefer-default-export": "on",
+    "one-var": "error",
+    "one-var-declaration-per-line": "error",
+    "new-cap": 0,
+    "consistent-return": "error",
+    "no-param-reassign": 0,
+    "comma-dangle": 0,
+    "global-require": "off",
+    "arrow-body-style": ["error", "as-needed"],
+    "import/no-dynamic-require": "error",
+    "prettier/prettier": 0,
+    "no-shadow": ["error", { "hoist": "functions" }],
+    "curly": ["error", "multi-line"],
+    "import/no-unresolved": [2, { "commonjs": true }],
+    "react/prefer-stateless-function": [
+      0,
+      {
+        "ignorePureComponents": true
+      }
+    ],
+    "valid-jsdoc": [
+      "error",
+      {
+        "requireReturn": true,
+        "requireReturnType": true,
+        "requireParamDescription": true,
+        "requireReturnDescription": true
+      }
+    ],
+    "require-jsdoc": [
+      "error",
+      {
+        "require": {
+          "FunctionDeclaration": true,
+          "MethodDefinition": false,
+          "ClassDeclaration": false
+        }
       }
     ]
   }

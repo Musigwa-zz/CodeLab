@@ -29,7 +29,11 @@ export class Home extends Component {
     const { navigation } = this.props;
     return (
       <TouchableOpacity
-        onPress={() => navigation.navigate("Profile", { username: item.login })}
+        onPress={() =>
+          navigation.navigate("Profile", {
+            username: item.login
+          })
+        }
         activeOpacity={0.7}
         style={styles.listItem}
       >

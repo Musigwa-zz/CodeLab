@@ -1,8 +1,8 @@
 import React from "react";
 import { Platform } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { colors } from "./constants";
 import PropTypes from "prop-types";
+import { colors } from "./constants";
 
 export default class Helpers {
   /**

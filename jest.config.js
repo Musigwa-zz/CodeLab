@@ -5,7 +5,13 @@ module.exports = {
   testMatch: ["**/?(*.)+(spec|test).js"],
   collectCoverage: true,
   clearMocks: true,
-  collectCoverageFrom: ["src/**/*.{js,jsx}"],
+  collectCoverageFrom: [
+    "src/**/*.{js,jsx}",
+    "!**/coverage/**",
+    "!**/node_modules/**",
+    "!**/babel.config.js",
+    "!**/jest.setup.js"
+  ],
   coverageThreshold: {
     global: {}
   },

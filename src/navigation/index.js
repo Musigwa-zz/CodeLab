@@ -11,7 +11,7 @@ const AppNavigator = createStackNavigator(
     Home: {
       screen: HomeScreen,
       navigationOptions: {
-        title: "Java developers in Lagos",
+        title: `Java developers from Lagos`,
         headerStyle: {
           backgroundColor: colors({}).primary
         },
@@ -38,16 +38,19 @@ const AppNavigator = createStackNavigator(
     },
     Profile: {
       screen: ProfileScreen,
-      navigationOptions: {
-        title: "Java developers in Lagos",
-        headerStyle: {
-          backgroundColor: colors({}).primary
-        },
-        headerTintColor: colors({}).secondary
+      navigationOptions: ({ navigation }) => {
+        const { params: { username } = {} } = navigation.state;
+        return {
+          title: `${username}'s profile`,
+          headerStyle: {
+            backgroundColor: colors({}).primary
+          },
+          headerTintColor: colors({}).secondary
+        };
       }
     }
   },
-  {}
+  { initialRouteName: "Home" }
 );
 
 export default createAppContainer(AppNavigator);
