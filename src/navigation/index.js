@@ -1,40 +1,39 @@
-import React from "react";
-import { TouchableOpacity } from "react-native";
-import { createStackNavigator, createAppContainer } from "react-navigation";
-import HomeScreen from "../screens/Home";
-import { colors } from "../helpers/constants";
-import ProfileScreen from "../screens/Profile";
-import Helpers from "../helpers";
+import React from 'react';
+import { TouchableOpacity } from 'react-native';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
+import HomeScreen from '../screens/Home';
+import { colors } from '../helpers/constants';
+import ProfileScreen from '../screens/Profile';
+import Helpers from '../helpers';
 
 const AppNavigator = createStackNavigator(
   {
     Home: {
       screen: HomeScreen,
       navigationOptions: {
-        title: `Java developers from Lagos`,
+        title: 'Java developers from Lagos',
         headerStyle: {
-          backgroundColor: colors({}).primary
+          backgroundColor: colors({}).primary,
         },
         headerTintColor: colors({}).secondary,
         headerRight: (
           <TouchableOpacity
             style={{
               flex: 1,
-              justifyContent: "center",
-              alignItems: "center",
-              padding: 10
+              justifyContent: 'center',
+              alignItems: 'center',
+              padding: 10,
             }}
             onPress={() => {}}
-            activeOpacity={0.5}
-          >
+            activeOpacity={0.5}>
             {Helpers.renderIcon({
-              name: "search",
+              name: 'search',
               color: colors({}).secondary,
-              size: 25
+              size: 25,
             })}
           </TouchableOpacity>
-        )
-      }
+        ),
+      },
     },
     Profile: {
       screen: ProfileScreen,
@@ -43,14 +42,14 @@ const AppNavigator = createStackNavigator(
         return {
           title: `${username}'s profile`,
           headerStyle: {
-            backgroundColor: colors({}).primary
+            backgroundColor: colors({}).primary,
           },
-          headerTintColor: colors({}).secondary
+          headerTintColor: colors({}).secondary,
         };
-      }
-    }
+      },
+    },
   },
-  { initialRouteName: "Home" }
+  { initialRouteName: 'Home' }
 );
 
 export default createAppContainer(AppNavigator);

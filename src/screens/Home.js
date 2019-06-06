@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
   Text,
   View,
@@ -6,12 +6,12 @@ import {
   Image,
   TouchableOpacity,
   SafeAreaView
-} from "react-native";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import styles from "../styles";
-import Helpers from "../helpers";
-import { fetchAll } from "../redux/actions/developers";
+} from 'react-native';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import styles from '../styles';
+import Helpers from '../helpers';
+import { fetchAll } from '../redux/actions/developers';
 
 export class Home extends Component {
   static propTypes = {
@@ -30,7 +30,7 @@ export class Home extends Component {
     return (
       <TouchableOpacity
         onPress={() =>
-          navigation.navigate("Profile", {
+          navigation.navigate('Profile', {
             username: item.login
           })
         }
@@ -52,7 +52,7 @@ export class Home extends Component {
           </Text>
         </View>
         <View style={[styles.arrow]}>
-          {Helpers.renderIcon({ name: "arrow-forward" })}
+          {Helpers.renderIcon({ name: 'arrow-forward' })}
         </View>
       </TouchableOpacity>
     );

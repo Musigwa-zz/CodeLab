@@ -1,8 +1,8 @@
-import Axios from "axios";
-import { baseURL } from "../helpers/constants";
+import Axios from 'axios';
+import { baseURL } from '../helpers/constants';
 
 export default Axios.create({
-  responseType: "json",
+  responseType: 'json',
   baseURL,
-  validateStatus: status => status >= 200 < 500
+  validateStatus: status => status >= 200 < 500,
 });

@@ -1,14 +1,14 @@
 import {
   FETCH_DEVELOPERS,
   FETCHING_SUCCESS,
-  FETCHING_FAILED
-} from "../actions/types";
+  FETCHING_FAILED,
+} from '../actions/types';
 
 export const initialState = {
   developers: [],
   currentDev: {},
   errorMessage: null,
-  isFetching: false
+  isFetching: false,
 };
 
 export default (state = initialState, { type, payload }) => {
