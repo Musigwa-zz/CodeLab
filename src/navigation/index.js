@@ -4,7 +4,7 @@ import { createStackNavigator, createAppContainer } from 'react-navigation';
 import HomeScreen from '../screens/Home';
 import { colors } from '../helpers/constants';
 import ProfileScreen from '../screens/Profile';
-import Helpers from '../helpers';
+import Icon from '../components/common/Icon';
 
 const AppNavigator = createStackNavigator(
   {
@@ -13,7 +13,7 @@ const AppNavigator = createStackNavigator(
       navigationOptions: {
         title: 'Java developers from Lagos',
         headerStyle: {
-          backgroundColor: colors({}).primary,
+          backgroundColor: colors({}).primary
         },
         headerTintColor: colors({}).secondary,
         headerRight: (
@@ -22,18 +22,15 @@ const AppNavigator = createStackNavigator(
               flex: 1,
               justifyContent: 'center',
               alignItems: 'center',
-              padding: 10,
+              padding: 10
             }}
             onPress={() => {}}
-            activeOpacity={0.5}>
-            {Helpers.renderIcon({
-              name: 'search',
-              color: colors({}).secondary,
-              size: 25,
-            })}
+            activeOpacity={0.5}
+          >
+            <Icon name="search" color={colors({}).secondary} size={25} />
           </TouchableOpacity>
-        ),
-      },
+        )
+      }
     },
     Profile: {
       screen: ProfileScreen,
@@ -42,12 +39,12 @@ const AppNavigator = createStackNavigator(
         return {
           title: `${username}'s profile`,
           headerStyle: {
-            backgroundColor: colors({}).primary,
+            backgroundColor: colors({}).primary
           },
-          headerTintColor: colors({}).secondary,
+          headerTintColor: colors({}).secondary
         };
-      },
-    },
+      }
+    }
   },
   { initialRouteName: 'Home' }
 );

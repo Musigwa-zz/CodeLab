@@ -10,8 +10,8 @@ import {
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import styles from '../styles';
-import Helpers from '../helpers';
 import { fetchAll } from '../redux/actions/developers';
+import Icon from '../components/common/Icon';
 
 export class Home extends Component {
   static propTypes = {
@@ -52,7 +52,7 @@ export class Home extends Component {
           </Text>
         </View>
         <View style={[styles.arrow]}>
-          {Helpers.renderIcon({ name: 'arrow-forward' })}
+          <Icon name="arrow-forward" />
         </View>
       </TouchableOpacity>
     );
