@@ -103,11 +103,15 @@ export class Profile extends Component {
           <TouchableOpacity
             style={button}
             activeOpacity={0.7}
+            testID="link"
             onPress={() => this.openInBrowser(html)}
           >
             <Text style={boldText}>{`@ ${login}`}</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => this.openInBrowser(html)}>
+          <TouchableOpacity
+            testID="link"
+            onPress={() => this.openInBrowser(html)}
+          >
             <Text style={lightText}>{html}</Text>
           </TouchableOpacity>
         </View>
@@ -124,6 +128,7 @@ export class Profile extends Component {
           ))}
         </View>
         <TouchableOpacity
+          testID="fab"
           style={FAB}
           activeOpacity={0.7}
           onPress={this.onShare}
@@ -140,8 +145,10 @@ Profile.propTypes = {
     avatar_url: PropTypes.string
   }).isRequired
 };
-const mapStateToProps = ({ devReducer: { currentDev } }) => ({ currentDev });
-const mapDispatchToProps = { fetchInfo: fetchOne };
+export const mapStateToProps = ({ devReducer: { currentDev } }) => ({
+  currentDev
+});
+export const mapDispatchToProps = { fetchInfo: fetchOne };
 
 export default connect(
   mapStateToProps,

@@ -10,12 +10,13 @@ module.exports = {
     '!**/coverage/**',
     '!**/node_modules/**',
     '!**/babel.config.js',
-    '!**/jest.setup.js',
+    '!**/jest.setup.js'
   ],
+  setupFiles: ['<rootDir>/jest/index.js'],
   coverageThreshold: {
-    global: {},
+    global: {}
   },
   transformIgnorePatterns: [
-    'node_modules/(?!((jest-)?react-native|react-clone-referenced-element|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|sentry-expo|native-base))',
-  ],
+    'node_modules/(?!((jest-)?react-native|react-clone-referenced-element|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|sentry-expo|native-base))'
+  ]
 };

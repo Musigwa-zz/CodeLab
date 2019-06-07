@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 
 export default class GitLink extends Component {
   render() {
-    const {
-      navigation: { state: { params } = {} }
-    } = this.props;
+    const { navigation } = this.props;
+    const { state } = navigation;
+    const { params } = state;
     const { uri } = params;
     return (
       <SafeAreaView style={{ flex: 1 }}>

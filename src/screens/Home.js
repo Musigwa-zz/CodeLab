@@ -30,6 +30,7 @@ export class Home extends Component {
     const { avatar, content, subTitle, text, listItem, title } = styles;
     return (
       <TouchableOpacity
+        testID="list-item"
         onPress={() =>
           navigation.navigate('Profile', {
             username: item.login
@@ -58,6 +59,7 @@ export class Home extends Component {
     return (
       <SafeAreaView style={container}>
         <FlatList
+          testID="flat-list"
           showsHorizontalScrollIndicator={false}
           showsVerticalScrollIndicator={false}
           style={listContainer}
