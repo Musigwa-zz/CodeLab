@@ -12,7 +12,6 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { FontAwesome } from '@expo/vector-icons';
-import InAppBrowser from 'react-native-inappbrowser-reborn';
 import styles from '../styles/profile';
 import { fetchOne } from '../redux/actions/developers';
 import { colors } from '../helpers/constants';
@@ -52,26 +51,9 @@ export class Profile extends Component {
     }
   };
 
-  openInBrowser = async () => {
-    const { currentDev: { html_url: uri } = {} } = this.props;
-    try {
-      await InAppBrowser.isAvailable();
-      InAppBrowser.open(uri, {
-        dismissButtonStyle: 'cancel',
-        preferredBarTintColor: 'gray',
-        preferredControlTintColor: 'white',
-        showTitle: true,
-        toolbarColor: '#6200EE',
-        secondaryToolbarColor: 'black',
-        enableUrlBarHiding: true,
-        enableDefaultShare: true,
-        forceCloseOnRedirection: true
-      }).then(result => {
-        Alert.alert(JSON.stringify(result));
-      });
-    } catch (error) {
-      Alert.alert(error.message);
-    }
+  openInBrowser = uri => {
+    const { navigation: { navigate } = {} } = this.props;
+    navigate('GitHub', { uri });
   };
 
   render() {
@@ -121,11 +103,11 @@ export class Profile extends Component {
           <TouchableOpacity
             style={button}
             activeOpacity={0.7}
-            onPress={this.openInBrowser}
+            onPress={() => this.openInBrowser(html)}
           >
             <Text style={boldText}>{`@ ${login}`}</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={this.openInBrowser}>
+          <TouchableOpacity onPress={() => this.openInBrowser(html)}>
             <Text style={lightText}>{html}</Text>
           </TouchableOpacity>
         </View>

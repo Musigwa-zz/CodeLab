@@ -5,6 +5,7 @@ import HomeScreen from '../screens/Home';
 import { colors } from '../helpers/constants';
 import ProfileScreen from '../screens/Profile';
 import Icon from '../components/common/Icon';
+import GitLink from '../screens/WebView';
 
 const AppNavigator = createStackNavigator(
   {
@@ -40,10 +41,26 @@ const AppNavigator = createStackNavigator(
           title: `${username}'s profile`,
           headerStyle: {
             backgroundColor: colors().primary,
-            borderBottomColor: colors().primary
+            borderBottomColor: 'transparent',
+            borderBottomWidth: 0,
+            shadowColor: 'transparent',
+            elevation: 0
           },
           headerTintColor: colors().secondary
         };
+      }
+    },
+    GitHub: {
+      screen: GitLink,
+      navigationOptions: {
+        headerStyle: {
+          backgroundColor: colors().primary,
+          borderBottomColor: 'transparent',
+          borderBottomWidth: 0,
+          shadowColor: 'transparent',
+          elevation: 0
+        },
+        headerTintColor: colors().secondary
       }
     }
   },
