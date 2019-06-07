@@ -5,10 +5,11 @@ import { Profile } from '../../src/screens/Profile';
 
 const props = {
   fetchInfo: jest.fn(),
+  currentDev: { username: 'MUSIGWA' },
   devReducer: { currentDev: { username: 'MUSIGWA' } },
   navigation: {
-    state: { params: { username: 'MUSIGWA' } },
-  },
+    state: { params: { username: 'MUSIGWA' } }
+  }
 };
 describe('<Profile />', () => {
   test('should render correctly', () => {

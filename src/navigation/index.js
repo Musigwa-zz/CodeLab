@@ -13,9 +13,9 @@ const AppNavigator = createStackNavigator(
       navigationOptions: {
         title: 'Java developers from Lagos',
         headerStyle: {
-          backgroundColor: colors({}).primary
+          backgroundColor: colors().primary
         },
-        headerTintColor: colors({}).secondary,
+        headerTintColor: colors().secondary,
         headerRight: (
           <TouchableOpacity
             style={{
@@ -27,7 +27,7 @@ const AppNavigator = createStackNavigator(
             onPress={() => {}}
             activeOpacity={0.5}
           >
-            <Icon name="search" color={colors({}).secondary} size={25} />
+            <Icon name="search" color={colors().secondary} size={25} />
           </TouchableOpacity>
         )
       }
@@ -39,9 +39,10 @@ const AppNavigator = createStackNavigator(
         return {
           title: `${username}'s profile`,
           headerStyle: {
-            backgroundColor: colors({}).primary
+            backgroundColor: colors().primary,
+            borderBottomColor: colors().primary
           },
-          headerTintColor: colors({}).secondary
+          headerTintColor: colors().secondary
         };
       }
     }
