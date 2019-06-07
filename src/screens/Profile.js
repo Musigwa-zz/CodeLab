@@ -6,8 +6,7 @@ import {
   Image,
   Text,
   Alert,
-  Share,
-  WebView
+  Share
 } from 'react-native';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -31,30 +30,6 @@ export class Profile extends Component {
     fetchInfo(username);
   }
 
-  openInBrowser = async () => {
-    const { currentDev: { html_url: uri } = {} } = this.props;
-    try {
-      await InAppBrowser.isAvailable();
-      InAppBrowser.open(uri, {
-        // iOS Properties
-        dismissButtonStyle: 'cancel',
-        preferredBarTintColor: 'gray',
-        preferredControlTintColor: 'white',
-        // Android Properties
-        showTitle: true,
-        toolbarColor: '#6200EE',
-        secondaryToolbarColor: 'black',
-        enableUrlBarHiding: true,
-        enableDefaultShare: true,
-        forceCloseOnRedirection: true
-      }).then(result => {
-        Alert.alert(JSON.stringify(result));
-      });
-    } catch (error) {
-      Alert.alert(error.message);
-    }
-  };
-
   onShare = async () => {
     const { currentDev: { name, html_url: html } = {} } = this.props;
     try {
@@ -74,6 +49,28 @@ export class Profile extends Component {
         [{ text: 'OK' }],
         { cancelable: true }
       );
+    }
+  };
+
+  openInBrowser = async () => {
+    const { currentDev: { html_url: uri } = {} } = this.props;
+    try {
+      await InAppBrowser.isAvailable();
+      InAppBrowser.open(uri, {
+        dismissButtonStyle: 'cancel',
+        preferredBarTintColor: 'gray',
+        preferredControlTintColor: 'white',
+        showTitle: true,
+        toolbarColor: '#6200EE',
+        secondaryToolbarColor: 'black',
+        enableUrlBarHiding: true,
+        enableDefaultShare: true,
+        forceCloseOnRedirection: true
+      }).then(result => {
+        Alert.alert(JSON.stringify(result));
+      });
+    } catch (error) {
+      Alert.alert(error.message);
     }
   };
 
