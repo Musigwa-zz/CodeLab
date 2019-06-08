@@ -23,6 +23,22 @@ export class Profile extends Component {
     navigation: PropTypes.objectOf(PropTypes.any).isRequired
   };
 
+  static navigationOptions = ({ navigation }) => {
+    const { state = {} } = navigation;
+    const { params: { username = 'Anonymous' } = {} } = state;
+    return {
+      title: `${username}'s profile`,
+      headerStyle: {
+        backgroundColor: colors().primary,
+        borderBottomColor: 'transparent',
+        borderBottomWidth: 0,
+        shadowColor: 'transparent',
+        elevation: 0
+      },
+      headerTintColor: colors().secondary
+    };
+  };
+
   componentWillMount() {
     const { fetchInfo, navigation } = this.props;
     const { state } = navigation;

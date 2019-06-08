@@ -49,9 +49,21 @@ describe('<Profile />', () => {
     expect(openInBrowser).toHaveBeenCalledTimes(2);
   });
 
-  test('should fetch the profile when the component is mounting', async () => {
-    const fetchProfile = jest.spyOn(profile.props, 'fetchInfo');
-    await profile.componentWillMount();
-    expect(fetchProfile).toHaveBeenCalledTimes(1);
+  test('navigationOptions should be called with navigation object', async () => {
+    const navigationOptions = jest.spyOn(Profile, 'navigationOptions');
+    const { navigation } = props;
+    Profile.navigationOptions({ navigation });
+    expect(navigationOptions).toHaveBeenCalledTimes(1);
+    expect(navigationOptions).toHaveBeenCalledWith({ navigation });
+  });
+
+  test('should set the title with Anonymous if no params passed in', async () => {
+    const navigationOptions = jest.spyOn(Profile, 'navigationOptions');
+    const navigation = {};
+    const resp = Profile.navigationOptions({ navigation });
+    expect(navigationOptions).toHaveBeenCalledTimes(1);
+    expect(navigationOptions).toHaveReturned();
+    expect(resp).toHaveProperty('title');
+    expect(resp.title).toContain('Anonymous');
   });
 });

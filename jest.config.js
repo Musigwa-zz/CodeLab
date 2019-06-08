@@ -14,7 +14,12 @@ module.exports = {
   ],
   setupFiles: ['<rootDir>/jest/index.js'],
   coverageThreshold: {
-    global: {}
+    global: {
+      branches: 100,
+      functions: 100,
+      lines: 100,
+      statements: 100
+    }
   },
   transformIgnorePatterns: [
     'node_modules/(?!((jest-)?react-native|react-clone-referenced-element|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|sentry-expo|native-base))'
