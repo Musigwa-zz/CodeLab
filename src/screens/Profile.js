@@ -15,7 +15,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import styles from '../styles/profile';
 import { fetchOne } from '../redux/actions/developers';
 import { colors } from '../helpers/constants';
-import Helpers from '../helpers';
+import ListItem from '../components/Lists/ListItem';
 
 export class Profile extends Component {
   static propTypes = {
@@ -24,23 +24,19 @@ export class Profile extends Component {
   };
 
   componentWillMount() {
-    const { fetchInfo, navigation: { state } = {} } = this.props;
+    const { fetchInfo, navigation } = this.props;
+    const { state } = navigation;
     const { username } = state.params;
     fetchInfo(username);
   }
 
   onShare = async () => {
-    const { currentDev: { name, html_url: html } = {} } = this.props;
+    const { currentDev } = this.props;
+    const { name, html_url: html } = currentDev;
     try {
       await Share.share({
         message: `Please checkout @${name}'s GitHub profile\n${html}`
       });
-      Alert.alert(
-        `Successfully shared @${name}'s profile`,
-        '',
-        [{ text: 'OK' }],
-        { cancelable: true }
-      );
     } catch (error) {
       Alert.alert(
         `Failed to share @${name}'s profile`,
@@ -52,25 +48,25 @@ export class Profile extends Component {
   };
 
   openInBrowser = uri => {
-    const { navigation: { navigate } = {} } = this.props;
+    const { navigation } = this.props;
+    const { navigate } = navigation;
     navigate('GitHub', { uri });
   };
 
   render() {
+    const { currentDev } = this.props;
     const {
-      currentDev: {
-        avatar_url: avatarUrl,
-        name,
-        login,
-        html_url: html,
-        public_repos: repositories,
-        public_gists: gists,
-        followers,
-        following,
-        hireable,
-        company
-      } = {}
-    } = this.props;
+      avatar_url: avatarUrl,
+      name,
+      login,
+      html_url: html,
+      public_repos: repositories,
+      public_gists: gists,
+      followers,
+      following,
+      hireable,
+      company
+    } = currentDev;
     const data = {
       repositories,
       followers,
@@ -88,10 +84,7 @@ export class Profile extends Component {
       button,
       boldText,
       lightText,
-      listItem,
-      FAB,
-      title,
-      subTitle
+      FAB
     } = styles;
     return (
       <SafeAreaView style={{ flex: 1 }}>
@@ -117,14 +110,7 @@ export class Profile extends Component {
         </View>
         <View style={{ paddingHorizontal: 15 }}>
           {Object.keys(data).map(key => (
-            <View key={String(key)} style={listItem}>
-              <Text style={title}>{Helpers.capitalize(key)}</Text>
-              <Text style={subTitle}>
-                {data[key] === null
-                  ? 'Not specified'
-                  : Helpers.capitalize(String(data[key]))}
-              </Text>
-            </View>
+            <ListItem key={String(key)} title={key} subTitle={data[key]} />
           ))}
         </View>
         <TouchableOpacity
@@ -143,6 +129,11 @@ export class Profile extends Component {
 Profile.propTypes = {
   currentDev: PropTypes.shape({
     avatar_url: PropTypes.string
+  }).isRequired,
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func,
+    state: PropTypes.shape({ params: PropTypes.objectOf(PropTypes.any) })
+      .isRequired
   }).isRequired
 };
 export const mapStateToProps = ({ devReducer: { currentDev } }) => ({

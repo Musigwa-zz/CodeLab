@@ -25,7 +25,6 @@ const AppNavigator = createStackNavigator(
               alignItems: 'center',
               padding: 10
             }}
-            onPress={() => {}}
             activeOpacity={0.5}
           >
             <Icon name="search" color={colors().secondary} size={25} />

@@ -48,4 +48,10 @@ describe('<Profile />', () => {
       .simulate('press');
     expect(openInBrowser).toHaveBeenCalledTimes(2);
   });
+
+  test('should fetch the profile when the component is mounting', async () => {
+    const fetchProfile = jest.spyOn(profile.props, 'fetchInfo');
+    await profile.componentWillMount();
+    expect(fetchProfile).toHaveBeenCalledTimes(1);
+  });
 });

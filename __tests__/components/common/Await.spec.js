@@ -1,11 +1,11 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 
 import Await from '../../../src/components/common/Await';
 
 describe('<Await />', () => {
   test('should render correctly', () => {
-    const tree = renderer.create(<Await />).toJSON();
+    const tree = shallow(<Await />);
     expect(tree).toMatchSnapshot();
   });
 });

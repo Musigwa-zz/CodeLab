@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 import GitLink from '../../src/screens/WebView';
 
 const props = {
@@ -9,7 +9,7 @@ const props = {
 };
 describe('<GitLink />', () => {
   test('should render correctly', () => {
-    const tree = renderer.create(<GitLink {...props} />).toJSON();
+    const tree = shallow(<GitLink {...props} />);
     expect(tree).toMatchSnapshot();
   });
 });
