@@ -5,6 +5,7 @@ import HomeScreen from '../screens/Home';
 import { colors } from '../helpers/constants';
 import ProfileScreen from '../screens/Profile';
 import Icon from '../components/common/Icon';
+import GitLink from '../screens/WebView';
 
 const AppNavigator = createStackNavigator(
   {
@@ -13,9 +14,9 @@ const AppNavigator = createStackNavigator(
       navigationOptions: {
         title: 'Java developers from Lagos',
         headerStyle: {
-          backgroundColor: colors({}).primary
+          backgroundColor: colors().primary
         },
-        headerTintColor: colors({}).secondary,
+        headerTintColor: colors().secondary,
         headerRight: (
           <TouchableOpacity
             style={{
@@ -24,25 +25,25 @@ const AppNavigator = createStackNavigator(
               alignItems: 'center',
               padding: 10
             }}
-            onPress={() => {}}
             activeOpacity={0.5}
           >
-            <Icon name="search" color={colors({}).secondary} size={25} />
+            <Icon name="search" color={colors().secondary} size={25} />
           </TouchableOpacity>
         )
       }
     },
-    Profile: {
-      screen: ProfileScreen,
-      navigationOptions: ({ navigation }) => {
-        const { params: { username } = {} } = navigation.state;
-        return {
-          title: `${username}'s profile`,
-          headerStyle: {
-            backgroundColor: colors({}).primary
-          },
-          headerTintColor: colors({}).secondary
-        };
+    Profile: { screen: ProfileScreen },
+    GitHub: {
+      screen: GitLink,
+      navigationOptions: {
+        headerStyle: {
+          backgroundColor: colors().primary,
+          borderBottomColor: 'transparent',
+          borderBottomWidth: 0,
+          shadowColor: 'transparent',
+          elevation: 0
+        },
+        headerTintColor: colors().secondary
       }
     }
   },
