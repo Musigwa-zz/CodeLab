@@ -32,23 +32,7 @@ const AppNavigator = createStackNavigator(
         )
       }
     },
-    Profile: {
-      screen: ProfileScreen
-      // navigationOptions: ({ navigation }) => {
-      //   const { params: { username } = {} } = navigation.state;
-      //   return {
-      //     title: `${username}'s profile`,
-      //     headerStyle: {
-      //       backgroundColor: colors().primary,
-      //       borderBottomColor: 'transparent',
-      //       borderBottomWidth: 0,
-      //       shadowColor: 'transparent',
-      //       elevation: 0
-      //     },
-      //     headerTintColor: colors().secondary
-      //   };
-      // }
-    },
+    Profile: { screen: ProfileScreen },
     GitHub: {
       screen: GitLink,
       navigationOptions: {
