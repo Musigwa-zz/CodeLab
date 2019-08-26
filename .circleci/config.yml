@@ -1,7 +1,6 @@
 version: 2
 jobs:
   build:
-     CC_TEST_REPORTER_ID: 
     docker:
       - image: circleci/node:10.0-browsers
     steps:
