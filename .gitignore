@@ -1,0 +1,21 @@
+node_modules
+.expo/*
+npm-debug.*
+*.jks
+*.p12
+*.key
+*.mobileprovision
+.expo
+.vscode
+
+# npm files
+package-*
+
+# test folders/files
+coverage
+
+# All snapshots
+**/__snapshots__
+
+#yarn 
+*yarn*
