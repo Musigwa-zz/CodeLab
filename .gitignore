@@ -16,3 +16,6 @@ coverage
 
 # All snapshots
 **/__snapshots__
+
+# Yarn 
+yarn*
