@@ -5,6 +5,8 @@ jobs:
       - image: circleci/node:10.0-browsers
     steps:
       - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: "Install Dependencies"
           command: npm i
