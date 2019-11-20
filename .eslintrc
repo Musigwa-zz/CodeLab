@@ -44,7 +44,7 @@
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "quotes": "error",
     "eol-last": ["error", "always"],
-    "import/prefer-default-export": "on",
+    "import/prefer-default-export": 2,
     "one-var": "error",
     "one-var-declaration-per-line": "error",
     "new-cap": 0,
@@ -62,25 +62,6 @@
       0,
       {
         "ignorePureComponents": true
-      }
-    ],
-    "valid-jsdoc": [
-      "error",
-      {
-        "requireReturn": true,
-        "requireReturnType": true,
-        "requireParamDescription": true,
-        "requireReturnDescription": true
-      }
-    ],
-    "require-jsdoc": [
-      "error",
-      {
-        "require": {
-          "FunctionDeclaration": true,
-          "MethodDefinition": false,
-          "ClassDeclaration": false
-        }
       }
     ]
   }
