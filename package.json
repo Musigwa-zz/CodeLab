@@ -6,8 +6,7 @@
     "ios": "expo start --ios",
     "eject": "expo eject",
     "test": "jest --coverage -u",
-    "lint": "eslint .",
-    "prettier": "eslint . --fix",
+    "prettier": "eslint --ignore-path ./.eslintignore . --fix",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
   "dependencies": {
@@ -37,6 +36,7 @@
     "husky": "3.1.0",
     "jest": "24.8.0",
     "jest-expo": "32.0.1",
+    "lint-staged": "9.4.3",
     "moxios": "0.4.0",
     "react-dom": "16.8.6",
     "redux-devtools": "3.5.0",
@@ -44,9 +44,11 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn run prettier",
-      "pre-push": "yarn run prettier"
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": ["yarn prettier", "git add"]
   },
   "private": true
 }
