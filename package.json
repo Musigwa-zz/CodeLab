@@ -48,7 +48,10 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx}": ["yarn prettier", "git add"]
+    "*.{js,jsx}": [
+      "yarn prettier",
+      "git add"
+    ]
   },
   "private": true
 }
