@@ -1,7 +1,7 @@
 [![CircleCI](https://circleci.com/gh/Musigwa/CodeLab.svg?style=svg)](https://circleci.com/gh/Musigwa/CodeLab)
-[![Coverage Status](https://coveralls.io/repos/github/Musigwa/CodeLab/badge.svg?branch=master)](https://coveralls.io/github/Musigwa/CodeLab?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/Musigwa/CodeLab/badge.svg)](https://coveralls.io/github/Musigwa/CodeLab)
 [![Maintainability](https://api.codeclimate.com/v1/badges/9ab1aecdc9de22ecc4e7/maintainability)](https://codeclimate.com/github/Musigwa/CodeLab/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/9ab1aecdc9de22ecc4e7/test_coverage)](https://codeclimate.com/github/Musigwa/CodeLab/test_coverage)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/f60e10daf55dccf15b77/test_coverage)](https://codeclimate.com/github/Musigwa/CodeLab/test_coverage)
 
 # CodeLab - A simple mobile application to show a list of JavaScript developers based in Kigali
 
