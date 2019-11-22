@@ -1,8 +1,8 @@
 ---
 name: Bug report
-about: "\U0001F41ECreate a report to help us improve \U0001F41E"
-title: "\U0001F41ECreate a report to help us improve \U0001F41E"
-labels: bug, help wanted, invalid
+about: "🐞Flag any malfunctions to help us fix them quickly🐞"
+title: "Provide the bug title here"
+labels: bug
 assignees: ''
 
 ---

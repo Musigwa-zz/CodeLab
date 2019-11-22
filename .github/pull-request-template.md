@@ -25,11 +25,11 @@
 
 > **Provide the steps to manually test the functionalities implemented in this PR**
 
-- After cloning the [repo](https://github.com/Musigwa/PayIt.git), and `cd PayIt`
-- Check out this branch by `git checkout update-important-dependencies`
+- After cloning the [repo](https://github.com/Musigwa/CodeLab.git), and `cd CodeLab`
+- Check out this branch by `git checkout [the branch for this pr]`
 - Run `yarn` to install the project dependencies
-- Make sure to create your `.env` file by `cp .env.sample.js .env` and set the correct values
-- Run `yarn start` to start the server.
+- Make sure your android emulator and/or iOS simulator is installed and working properly
+- Run `yarn run ios` or `yarn run android` to start the application in either platform.
 
 #### Checklist:
 
@@ -40,7 +40,7 @@
 - [ ] I have added tests which prove the effectiveness of my work
 - [x] new and existing tests pass locally with my changes
 
-#### GitHub issue your changes fix 
+#### GitHub issue your changes fix
 
 Resolves #10
 
