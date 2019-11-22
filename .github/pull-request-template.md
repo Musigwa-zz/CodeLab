@@ -29,7 +29,7 @@
 - Check out this branch by `git checkout [the branch for this pr]`
 - Run `yarn` to install the project dependencies
 - Make sure your android emulator and/or iOS simulator is installed and working properly
-- Run `yarn run ios` or `yarn run android` to start the application in either platform.
+- Run `yarn run ios` or `yarn run android` to start the application on either platform.
 
 #### Checklist:
 
