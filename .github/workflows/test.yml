@@ -1,5 +1,4 @@
 name: Run test suites
-
 on: 
   push:
     branches:
