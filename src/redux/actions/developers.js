@@ -8,7 +8,7 @@ export const fetchAll = () => async dispatch => {
   try {
     dispatch({ type: FETCH_DEVELOPERS });
     const { data } = await Axios.get(
-      '/search/users?q=location:lagos+language:java'
+      '/search/users?q=location:kigali+language:javascript'
     );
     const { items: developers } = data;
     dispatch(success({ developers, developersCount: developers.length }));

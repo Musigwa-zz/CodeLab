@@ -1,9 +1,9 @@
-[![CircleCI](https://circleci.com/gh/Musigwa/RNLevelUp.svg?style=svg)](https://circleci.com/gh/Musigwa/RNLevelUp)
-[![Coverage Status](https://coveralls.io/repos/github/Musigwa/RNLevelUp/badge.svg?branch=master)](https://coveralls.io/github/Musigwa/RNLevelUp?branch=master)
-[![Maintainability](https://api.codeclimate.com/v1/badges/9ab1aecdc9de22ecc4e7/maintainability)](https://codeclimate.com/github/Musigwa/RNLevelUp/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/9ab1aecdc9de22ecc4e7/test_coverage)](https://codeclimate.com/github/Musigwa/RNLevelUp/test_coverage)
+[![CircleCI](https://circleci.com/gh/Musigwa/CodeLab.svg?style=svg)](https://circleci.com/gh/Musigwa/CodeLab)
+[![Coverage Status](https://coveralls.io/repos/github/Musigwa/CodeLab/badge.svg?branch=master)](https://coveralls.io/github/Musigwa/CodeLab?branch=master)
+[![Maintainability](https://api.codeclimate.com/v1/badges/9ab1aecdc9de22ecc4e7/maintainability)](https://codeclimate.com/github/Musigwa/CodeLab/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/9ab1aecdc9de22ecc4e7/test_coverage)](https://codeclimate.com/github/Musigwa/CodeLab/test_coverage)
 
-# RNLevelUp - A simple mobile application to show a list of Java developers based in Lagos
+# CodeLab - A simple mobile application to show a list of JavaScript developers based in Kigali
 
 - This is a level up application built with **[react-native](https://facebook.github.io/react-native/)** that displays the brief information about Java developers based in Lagos/Nigeria. It uses the **[Github API](https://developer.github.com/v3/)**.
 
@@ -13,7 +13,7 @@
 
 1. After cloning the repository to your local machine with
 
-`git clone https://github.com/Musigwa/RNLevelUp.git` and `cd RNLevelUp`.
+`git clone https://github.com/Musigwa/CodeLab.git` and `cd CodeLab`.
 
 Make sure that you have `expo-cli` installed, and if not follow the instructions **[here](https://docs.expo.io/versions/latest/)**.
 

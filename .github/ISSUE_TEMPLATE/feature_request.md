@@ -1,8 +1,8 @@
 ---
 name: Feature request
-about: "✨State your feature request title ✨"
-title: "✨State your feature request title ✨"
-labels: Feature request, enhancement
+about: "✨Suggest some new feature to help us improve✨"
+title: "State your feature request title"
+labels: enhancement
 assignees: ''
 
 ---
