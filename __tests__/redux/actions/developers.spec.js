@@ -35,7 +35,7 @@ describe("Testing developers' action creators", () => {
         }
       ];
       await moxios.stubRequest(
-        `${baseURL}/search/users?q=location:lagos+language:java`,
+        `${baseURL}/search/users?q=location:kigali+language:javascript`,
         {
           status: 200,
           response: { items: developers }
@@ -55,7 +55,7 @@ describe("Testing developers' action creators", () => {
         }
       ];
       await moxios.stubRequest(
-        `${baseURL}/search/users?q=location:lagos+language:java`,
+        `${baseURL}/search/users?q=location:kigali+language:javascript`,
         {
           status: 500,
           response: { errorMessage: 'something went wrong' }

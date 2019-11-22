@@ -12,7 +12,7 @@ const AppNavigator = createStackNavigator(
     Home: {
       screen: HomeScreen,
       navigationOptions: {
-        title: 'Java developers from Lagos',
+        title: 'JavaScript developers from Kigali',
         headerStyle: {
           backgroundColor: colors().primary
         },
