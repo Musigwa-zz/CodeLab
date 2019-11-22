@@ -1,4 +1,4 @@
-name: Run test suites
+name: Test suites
 on: 
   push:
     branches:
@@ -19,7 +19,7 @@ jobs:
       run: npm install
       env:
         CI: true
-    - name: Run test suites
+    - name: Run the test suites
       run: npm test
       env:
         CI: true

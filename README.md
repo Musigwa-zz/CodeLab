@@ -1,4 +1,4 @@
-![](https://github.com/Musigwa/CodeLab/workflows/Run%20test%20suites/badge.svg)
+![](https://github.com/Musigwa/CodeLab/workflows/Test%20suites/badge.svg)
 [![CircleCI](https://circleci.com/gh/Musigwa/CodeLab.svg?style=svg)](https://circleci.com/gh/Musigwa/CodeLab)
 [![Coverage Status](https://coveralls.io/repos/github/Musigwa/CodeLab/badge.svg)](https://coveralls.io/github/Musigwa/CodeLab)
 [![Maintainability](https://api.codeclimate.com/v1/badges/9ab1aecdc9de22ecc4e7/maintainability)](https://codeclimate.com/github/Musigwa/CodeLab/maintainability)
