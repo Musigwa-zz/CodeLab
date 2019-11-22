@@ -3,8 +3,7 @@ name: Run test suites
 on: 
   push:
     branches:
-    - develop
-    - releases/**
+    - '**'
 jobs:
   build:
     runs-on: ubuntu-latest
