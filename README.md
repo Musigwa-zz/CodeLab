@@ -26,7 +26,7 @@ Make sure that you have `expo-cli` installed, and if not follow the instructions
 
 ## Running the tests
 
-`npm test` or `yarn test`
+`npm run test` or `yarn test`
 
 ## Built With
 
